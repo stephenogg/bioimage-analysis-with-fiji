@@ -1,25 +1,23 @@
 ---
 title: ImageJ Basics
-teaching: 5
-exercises: 10
+teaching: 25
+exercises: 0
 ---
 
 ::::::::::::::::::::::::::::::::::::::: objectives
 
-- Recognise Fiji's (ImageJ's) main window.
-- Recognise how Fiji behaves when opening windows.
+- Recognise Fiji's (ImageJ's) main window and its constituents.
+- Recognise Fiji's menu structure and components.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::: questions
 
 - How Do I Get Started?
-- Where can I find tools to manipulate the images
+- Where can I find tools to manipulate the images?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Installation
-First, you should download and install ImageJ, ImageJ2, or [Fiji](https://fiji.sc) (for microscopy image data, use Fiji).
 
 ## The Main Window
 After starting the program, you will see the main window:

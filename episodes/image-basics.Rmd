@@ -101,8 +101,8 @@ You might be thinking:
 > "If I squint, that does look vaguely like an eight,
 and I see two colours but how can I deal with a tiny image that is only 15 pixels in size?".
 
-We need to enlarge the image to see it. The display of the eight you see when you open the file 
-tries to recapitulate the original data as closely as possible. But 15 pixels on the screen is 
+We need to enlarge the image to see it. Fiji displays the eight you see when you open the file 
+as closely as possible to the original data. But 15 pixels on the screen is 
 not much real estate. Click on the Magnifying glass on the Fiji Main Window. Then move your 
 cursor over the image window and *onto the image itself*. Your cursor should change from an arrow 
 to a double headed crossed arrow when the cursor is over the image. Clicking in this position 
@@ -321,7 +321,8 @@ key to certain techniques explored in later chapters of this lesson.
 To get started let's see an example of how different dimensions of information
 combine to produce a set of pixels using a 4 x 4 matrix with 3 dimensions. We'll 
 use one dimension each for the colours red, green, and blue.
-Open the "4x4checkerboard.tif" image in Fiji (*File -> Open...* -- and then navigate to the file)
+Open the "4x4checkerboard.tif" image in Fiji (*File -> Open...* -- and then navigate to the file. 
+You'll need to use the magnifying glass again.)
 
 ![4 X 4 Checkerboard](fig/image-basics/checkerboard.png){alt='Image of a checkerboard'}
 
@@ -537,7 +538,7 @@ Such an image is an example of *raster graphics*.
 ## Image type
 
 Fiji categorizes images by their pixel data bit-depth 
-(i.e. how much memory is allocated to store a single pixel's data - see below -- Bits & Bytes) 
+(i.e. how much memory is allocated to store a single pixel's data - see below -- [Bits & Bytes](#bits-and-bytes)) 
 to support scientific analysis. The core types represent how much data is stored per pixel, 
 determining the image's intensity range and color capabilities. 
 You can check or change your image type in Fiji via the top menu by selecting: 
@@ -783,7 +784,7 @@ JPEG images are perhaps the most commonly encountered digital images today.
 JPEG uses lossy compression,
 and the degree of compression can be tuned to your liking.
 It supports 24-bit colour depth,
-and since the format is so widely used,
+and because the format is so widely used,
 JPEG images can be viewed and manipulated easily on all computing platforms.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -900,7 +901,7 @@ A histogram shows how often each colour value appears in an image.
 The histograms for the uncompressed (left) and compressed (right) images
 are shown below:
 
-![Histograms of the two enalregd images](fig/image-basics/quality-histogram.jpg){alt='histograms of the above images'}
+![Histograms of the two enlarged images](fig/image-basics/quality-histogram.jpg){alt='histograms of the above images'}
 
 We learn how to make histograms such as these later on in the workshop.
 The differences in the colour histograms are even more apparent than in the
@@ -945,12 +946,13 @@ what type of camera was used and with what settings, etc.
 We normally don't see this metadata when we view an image,
 but we can view it independently if we wish to
 (see [*Accessing Metadata*](#accessing-metadata), below).
-The important thing to be aware of at this stage is that
+**The important thing to be aware of at this stage is that
 you cannot rely on the metadata of an image being fully preserved
-when you use software to process that image.
-The image reader/writer library that we use throughout this lesson,
-`imageio.v3`, includes metadata when saving new images but may fail to keep
-certain metadata fields.
+when you use software to process that image.** 
+Fiji tries to read metadata from files that you open and includes 
+metadata when saving new images but may fail to keep
+certain metadata fields, depending on the file format you choose 
+when saving.
 In any case, remember: **if metadata is important to you,
 take precautions to always preserve the original files**.
 
@@ -958,11 +960,8 @@ take precautions to always preserve the original files**.
 
 ## Accessing Metadata
 
-`imageio.v3` provides a way to display or explore the metadata
+Fiji provides a way to display or explore the metadata
 associated with an image. Metadata is served independently from pixel data:
-
-
-
 Many popular image editing programs have built-in metadata viewing
 capabilities. A platform-independent open-source tool that allows
 users to read, write, and edit metadata is
@@ -970,10 +969,12 @@ users to read, write, and edit metadata is
 types and metadata formats but requires some technical knowledge to be
 used effectively.
 Other software exists that can help you handle metadata,
-e.g., [Fiji](https://imagej.net/Fiji)
-and [ImageMagick](https://imagemagick.org/index.php).
+e.g., [ImageMagick](https://imagemagick.org/index.php).
 You may want to explore these options if you need to work with
-the metadata of your images.
+the metadata of your images.  
+In Fiji, the metadata of an image can be accessed via the menu, using: 
+
+*Image -> Show Info...*
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -986,7 +987,8 @@ critical spatial calibrations and hardware metadata.
 
 Every major microscope manufacturer encodes proprietary information 
 (like laser power, z-stacks, and time-series settings) differently, 
-which makes them unreadable by standard image viewers:
+which makes them unreadable by standard image viewers. 
+A few examples are given below:
 
 - Zeiss (.czi): A complex, multi-dimensional format that frequently 
 uses pyramidal imaging for large virtual slides.
@@ -998,8 +1000,10 @@ but large sequences may require being opened as an image sequence.
 - OME-TIFF (.ome.tiff): The community standard developed by the Open Microscopy Environment 
 that combines raw pixels with open XML-based metadata.
 
-Fiji natively bundles Bio-Formats, 
-making it easy to open proprietary files by overriding Fiji's standard file opening logic.
+[Bio-Formats](https://www.openmicroscopy.org/bio-formats/), 
+an open-source product released by the [Open Microscopy Environment](https://wwww.openmicroscopy.org), 
+is bundled with Fiji, making it easy to open proprietary files by overriding Fiji's 
+standard file opening logic.
 
 1. The Quick Method (Drag and Drop) Simply drag your proprietary file (e.g., a .czi or .lif) 
 and drop it onto the main Fiji toolbar. Fiji will recognize the file and launch the Bio-Formats 
@@ -1033,13 +1037,14 @@ image formats:
 
 - Digital images are represented as rectangular arrays of square pixels.
 - Digital images use a left-hand coordinate system, with the origin in the upper left corner, the x-axis running to the right, and the y-axis running down. Some learners may prefer to think in terms of counting down rows for the y-axis and across columns for the x-axis.  Thus, we will make an effort to allow for both approaches in our lesson presentation.
-- Most frequently, digital images use an additive RGB model, with eight bits for the red, green, and blue channels.
-- scikit-image images are stored as multi-dimensional NumPy arrays.
-- In scikit-image images, the red channel is specified first, then the green, then the blue, i.e., RGB.
-- Lossless compression retains all the details in an image, but lossy compression results in loss of some of the original image detail.
+- Most frequently, colour digital images use an additive RGB model, with eight bits for the red, green, and blue channels.
+- Images are numeric arrays, although the array may be hidden from the end user.
+- In Fiji, values for each of the channels are specified as an (r,g,b) triplet.
+- Lossless compression retains all the details in an image. 
+- Lossy compression results in loss of some of the original image detail.
 - BMP images are uncompressed, meaning they have high quality but also that their file sizes are large.
 - JPEG images use lossy compression, meaning that their file sizes are smaller, but image quality may suffer.
 - TIFF images can be uncompressed or compressed with lossy or lossless compression.
-- Depending on the camera or sensor, various useful pieces of information may be stored in an image file, in the image metadata.
+- Depending on the camera or sensor, various useful pieces of information (image metadata) may be stored in the image file.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
