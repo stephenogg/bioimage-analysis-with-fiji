@@ -1,67 +1,151 @@
 ---
-title: Setup
+title: "Setup"
 ---
 
-Please download Fiji for your operating system as described in the Software Setup section below.  
-Fiji is a powerful, "batteries-included" distribution of ImageJ2 software designed specifically for scientific image analysis. It is heavily favoured by researchers and biologists for its ability to handle complex, multi-dimensional data and automate workflows.
+# Setup
 
-![](fig/fiji.svg){alt=""}
+Before attending this workshop, you will need to install Fiji and download the lesson data.
 
-### Key Reasons to Use Fiji
+## Learning Objectives
 
-* **Free and Open Source:** Driven by a community on GitHub, featuring an automatic updater that keeps all libraries fully maintained.
-* **Pre-bundled Plugins:** Comes pre-configured with hundreds of curated plugins for tracking, segmentation, and 3D rendering.
-* **Bio-Formats Integration:** Opens thousands of proprietary microscope and camera file formats (like .czi or .nd2) without extra conversions.
-* **Multi-Dimensional Analysis:** Processes heavy 3D, 4D, and multi-channel image datasets with optimized memory management.
-* **Automation & Scripting:** Automates repetitive tasks via built-in scripting languages (like Python, Java, or JavaScript) for reproducible research.
+By completing this setup, you will be able to:
 
-**Beware of Whole Slide Images:** Although it has optimized memory management, whole slide images are better analyzed with a "pyramid" aware software *e.g.* [QuPath](https://qupath.github.io/)
+- Install Fiji on your computer.
+- Launch Fiji successfully.
+- Verify that Fiji is working correctly.
+- Download and organise the lesson data.
 
+## Software Requirements
 
+For this workshop, we will use the **Stable** release of Fiji to ensure that all learners are working with the same software version.
 
-## Data Sets
+## Download Fiji
 
+1. Navigate to:
 
-Download the [data zip file](data/lesson-data.zip) and unzip it to your Desktop (or somewhere you can navigte to from within the ImageJ App).
-This folder contains the images we will need for today's lesson.
+   <https://fiji.sc>
 
-## Software Setup
+2. Locate the **Stable Downloads** button and press it.
 
-::::::::::::::::::::::::::::::::::::::: discussion
+3. Download the version appropriate for your operating system.
 
-### Details
+## Install Fiji
 
-Visit the [Fiji download page](https://fiji.sc) and follow the instruction below to download and install the version for your specific operating system.
-The downloads page will autodetect your system's operating system and hardware architecture and usually suggest the correct download for your system.
-You can download either the Latest or the Stable version. 
-:::::::::::::::::::::::::::::::::::::::::::::::::::
-
-:::::::::::::::: solution
+::: tab
 
 ### Windows
 
-Click on the Big Green Download button at the top of the page. Once the zip file is downloaded, right click the zip folder to "extract all" somewhere.
-This can be your Downloads folder, your Desktop, your Documents, etc. Just be sure that you *know* where you extracted the contents. Do not move it to the programs folder.
-To install plugins, you must have write privileges to the folder that contains your imageJ executable file and the plugins folder. 
+1. Download: `fiji-stable-win64-jdk.zip`
 
+2. Extract the ZIP archive.
 
-:::::::::::::::::::::::::
+3. A folder called `Fiji` will be created.
 
-:::::::::::::::: solution
+4. Move the `Fiji` folder to a suitable location.
 
-### MacOS
+   We recommend:  `C:\Users\<your-username>\Fiji`
 
-Click on the Big Green Download button at the top of the page. Once the zip file is downloaded, double-click on the zip file and it will automatically unzip into the Downloads folder.
-You can run the app from the downloads folder or move it into the Applications folder and run it from there. 
+5. Do **not** install Fiji in:
 
-:::::::::::::::::::::::::
+   `C:\Program Files`
 
+   Installing Fiji in your home directory avoids permission issues when updating Fiji or installing plugins.
 
-:::::::::::::::: solution
+6. Open the `Fiji` folder.
+
+7. Launch Fiji by double-clicking:  `fiji-windows-x64.exe`
+
+### macOS
+
+1. Download:   `fiji-stable-macosx-jdk.zip`
+
+2. Extract the ZIP archive.
+
+3. Open the extracted `Fiji` folder.
+
+4. Move: `Fiji.app` folder to your **Applications** folder.
+
+5. Launch Fiji from the Applications folder.
+
+6. The first time you launch Fiji, macOS *may* display a security warning 
+   because the application was downloaded from the internet.
+
+   If this happens:
+
+   - Open **System Settings**
+   - Select **Privacy & Security**
+   - Click **Open Anyway**
+   - Launch Fiji again
+
 
 ### Linux
 
-Some flavors of Linux make ImageJ available as a package that can be installed with your packaage manager. ***Do not install ImageJ this way***, as you will likely have problems installing additional plugins. Furthermore, ImageJ2 is not available from package managers. For the time being, it is recommended to download the Linux 64-bit distribution of Fiji from the link above.
+1. Download:  `fiji-stable-linux64-jdk.zip`
 
-:::::::::::::::::::::::::
+2. Extract the ZIP archive.
+
+3. A folder called: `Fiji` will be created.
+
+4. Move the folder to a suitable location, for example: `~/Fiji`
+
+5. Open a terminal.
+
+6. Navigate to the Fiji directory:  `cd ~/Fiji`
+
+7. Launch Fiji:   `./ImageJ-linux64`
+
+:::
+
+## Test Your Installation
+
+To confirm that Fiji is installed correctly:
+
+1. Start Fiji.
+2. Select **File → Open Samples → Blobs**.
+3. A sample image should open.
+4. Select **Image → Properties**.
+
+You should see information describing the image dimensions and pixel size.
+
+If you can open the sample image and view its properties, Fiji is working correctly.
+
+## Download the Lesson Data
+
+Download the lesson data archive from the link provided by your instructor and extract it into a dedicated workshop folder.
+
+We recommend the following directory structure:
+
+```text
+bioimage-analysis-using-fiji/
+|
+├── data/
+├── macros/
+└── results/
+```
+
+The lesson images will be stored in the `data` directory, any provided macros in the `macros` directory, and analysis outputs in the `results` directory.
+
+## Updating Fiji
+
+Fiji includes a built-in updater that can install bug fixes and plugin updates.
+
+Before you come to the workshop, pleaes update Fiji:
+
+1. Start Fiji. The updater may run at startup by default, if not:
+2. Select **Help → Update...** - *NOT* **→ Update ImageJ...**
+3. Click **Apply Changes** if updates are available.
+4. Restart Fiji when prompted.
+
+> We recommend **updating Fiji before the workshop**. Updating beforehand is fine, updating during the workshop can cause delays.
+
+## Setup Checklist
+
+Before the workshop starts, make sure you can:
+
+- [ ] Launch Fiji.
+- [ ] Open the sample **Blobs** image.
+- [ ] View the image properties.
+- [ ] Locate your lesson data folder.
+
+If all four items are complete, you are ready to begin the lesson.
 
