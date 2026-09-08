@@ -99,7 +99,7 @@ The menu bar provides access to most of Fiji's functionality.
 
 On macOS, the menu bar appears at the top of the screen rather than within the Fiji window.
 
-The menus have different purposes:
+The menus have different purposes, in general:
 
 | Menu | Purpose |
 |--------|--------|

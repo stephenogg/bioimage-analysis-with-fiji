@@ -71,6 +71,8 @@ episodes:
 - 03-fiji-basics.md
 - 04-image-display-channels.md
 - 05-measuring-biological-structures.md
+- 06-image-preprocessing.md
+- 07-segmentation.md
 
 # Information for Learners
 learners:

@@ -54,30 +54,7 @@ This image contains fluorescently labelled HeLa cells.
 
 We will use this image to explore Fiji's measurement tools.
 
-## Regions of Interest (ROIs)
-
-A **Region of Interest (ROI)** defines the area of an image that will be
-measured.
-
-ROIs allow us to tell Fiji exactly which pixels should be included in a
-measurement.
-
-Common ROI shapes include:
-
-- Rectangles
-- Ovals
-- Polygons
-- Freehand selections
-- Lines
-
-Select the **Rectangle Selection Tool** from the toolbar and draw a rectangle
-within the image.
-
-The selected region is now an ROI.
-
-## Making a Measurement
-
-With the ROI selected:
+## Making Measurements
 
 ```text
 Analyze → Measure
@@ -100,14 +77,48 @@ By default, Fiji records measurements such as:
 - Minimum intensity
 - Maximum intensity
 
-The exact measurements depend on the current measurement settings.
+The exact measurements depend on the current measurement settings. 
+
+With nothing in the image selected, measurements are made on the entire image.
+
+## Regions of Interest (ROIs)
+
+A **Region of Interest (ROI)** defines the area of an image that will be
+measured.
+
+ROIs allow us to tell Fiji exactly which pixels should be included in a
+measurement.
+
+Common ROI shapes include:
+
+- Rectangles
+- Ovals
+- Polygons
+- Freehand selections
+- Lines
+
+Select the **Rectangle Selection Tool** from the toolbar and draw a rectangle
+within the image.
+
+The selected region is now an ROI.
+
+
+
+Repeat the measurements With the ROI selected:
+
+`Analyze → Measure` or `M`
+
+
+A Results window will appear (or a new row will be added, if the window is already open).
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
 Create several rectangle selections in different parts of the image and measure
 each one.
 
-Do all measurements produce the same result?
+Do all measurements produce the same result? Can you create multiple ROIs? 
+
+(Hint: Use the shift key and the ROI tool at the same time)
 
 Why might they differ?
 
@@ -133,6 +144,8 @@ Analyze → Set Measurements
 ```
 
 A dialog box appears containing many options.
+
+![Fiji's Set Measurements Window](fig/05-measuring-biological-structures/setMeasurements.png){alt="set measurements"}
 
 Common measurements include:
 

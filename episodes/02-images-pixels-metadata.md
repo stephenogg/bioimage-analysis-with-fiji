@@ -46,8 +46,6 @@ Select:  `File → Open Samples → HeLa Cells`
 
 The image should appear in a new image window.
 
-Note that Fiji uses floating windows. 
-
 Take a moment to inspect the image.
 
 What biological structures can you identify?
@@ -76,6 +74,8 @@ or the magnifying glass tool. (or use the `+` and `-` keys.)
 
 At high magnification the individual pixels become visible.
 
+![Visible Pixels](fig/02images-pixels-metadata/pixels.png){alt="magnified image showing individual pixels"}
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 Zoom into the image until individual pixels can be seen.
@@ -84,9 +84,11 @@ What shape are the pixels?
 
 :::::::::::::::::::::::: solution
 
-Pixels are arranged in a grid and appear as square elements.
+Pixels are arranged in a grid and appear as square elements. 
 
-Each pixel stores a numerical intensity value.
+But - [pixels are not little squares](https://alvyray.com/Memos/CG/Microsoft/6_pixel.pdf).
+
+Each pixel is a dimensionless sample stored as a numerical intensity value.
 
 :::::::::::::::::::::::::::::::::
 
@@ -130,6 +132,174 @@ Collectively, this information forms part of the image metadata.
 Fiji stores information describing the image
 alongside the pixel data, if the image has the metadata embedded.
 
+## Adding Calibration Information
+
+Not all images contain calibration information.
+
+For example:
+
+- metadata may have been lost during file conversion
+- images may have been exported incorrectly
+- image files may have been cropped or modified outside Fiji
+
+When calibration information is missing, Fiji reports measurements in pixels.
+
+In some cases, the correct pixel size is known from the microscope settings or acquisition software.
+
+### Manually Setting Calibration
+
+Suppose we know that:
+
+```text
+1 pixel = 0.325 µm
+```
+
+To add this calibration information:
+
+1. Select:
+
+   ```text
+   Image → Properties...
+   ```
+
+2. Enter:
+
+   ```text
+   Pixel Width:  0.325
+   Pixel Height: 0.325
+   Unit of Length: µm
+   ```
+
+3. Click **OK**.
+
+The image is now calibrated.
+
+Subsequent measurements will be reported in micrometres (µm) and square micrometres (µm²) rather than pixels.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Open an image and inspect its properties:
+
+```text
+Image → Properties...
+```
+
+Does the image contain calibration information?
+
+If not, assign a pixel size of:
+
+```text
+0.5 µm/pixel
+```
+
+and verify that the image dimensions update accordingly.
+
+:::::::::::::::::::::::: solution
+
+After entering the pixel size and units, Fiji updates the image properties.
+
+Measurements are now reported using calibrated units rather than pixels.
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Calibrating Using a Stage Micrometer
+
+Sometimes the pixel size is unknown, but an image of a stage micrometer is available.
+
+A stage micrometer is a microscope slide containing accurately spaced markings of known length.
+
+To calibrate an image using a stage micrometer:
+
+1. Open the stage micrometer image.
+2. Select the **Straight Line** tool.
+3. Draw a line spanning a known distance on the micrometer.
+
+e.g.
+
+```text
+100 µm
+```
+
+4. Select:     `Analyze → Set Scale...`
+
+5. Fiji will automatically record the measured distance in pixels.
+
+6. Enter:
+
+   ```text
+   Known Distance: 100
+   Unit of Length: µm
+   ```
+
+7. Click **OK**.
+
+Fiji will calculate the pixel size and store the calibration information.
+
+The image can now be measured using physical units.
+
+
+
+::::::::::::::::::::::::::::::::::::: callout
+
+## Adding a Scale Bar
+
+Once an image has been calibrated, Fiji can add an accurate scale bar.
+
+To add a scale bar:
+
+1. Select:     `Analyze → Tools → Scale Bar...`
+
+2. Configure the scale bar settings:
+
+   - Width of the scale bar
+   - Height (thickness)
+   - Font size
+   - Colour
+   - Location within the image
+
+3. Click **OK**.
+
+A scale bar will be added to the image.
+
+Scale bars are useful for:
+
+- presentations
+- posters
+- publications
+- communicating image scale to readers
+
+### A Word of Caution
+
+Adding a scale bar permanently modifies the displayed image.
+
+For quantitative analysis, it is generally best practice to:
+
+1. Perform all measurements on the original image.
+2. Add scale bars only to copies intended for presentation or publication.
+
+The scale bar is only correct if the image is properly calibrated. 
+Always verify calibration before adding a scale bar.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## Discussion
+
+Modern microscope acquisition software typically records calibration information automatically and stores it as image metadata.
+
+However, calibration information can sometimes be lost when images are:
+
+- exported to different file formats
+- processed using other software
+- cropped or modified
+- shared without their accompanying metadata
+
+For this reason, it is good practice to check calibration before beginning any quantitative analysis.
+
+When measurements appear unexpectedly large or small, calibration should be one of the first things to verify.
+
 
 ## What Is Metadata?
 
@@ -164,19 +334,8 @@ Not necessarily.
 
 The answer depends on the size represented by each pixel.
 
-If:
-
-```text
-1 pixel = 0.1 µm
-```
-
-the object has a different physical size than if:
-
-```text
-1 pixel = 1.0 µm
-```
-
-Measurements reported in pixels are often difficult to interpret biologically.
+Measurements reported in pixels are often difficult to interpret biologically, 
+unless comparisons are made.
 
 Calibration allows measurements to be expressed in meaningful units such as:
 
@@ -188,7 +347,8 @@ Calibration allows measurements to be expressed in meaningful units such as:
 ## Bit Depth
 
 Pixel values are stored using a specific ranges of values that are computer friendly. 
-These ranges are called  the image "bit-depth".
+These ranges are called  the image "bit-depth". They are dictated by the detector that
+was used to acquire the image.
 
 Common bit depths include:
 
@@ -198,8 +358,8 @@ Common bit depths include:
 | 16-bit | 0 to 65,535 | Positive Integer
 | 32-bit | Large numerical range | Floating Point (Fractions!)
 
-Higher bit depths allow finer graduations between intensity measurements 
-and the storage of non-integer and negative values.
+Higher bit depths allow finer graduations between intensity measurements. 
+32-bit floating point data can store non-integer and negative values.
 
 In fluorescence microscopy, 16-bit images are commonly used.
 
@@ -229,7 +389,7 @@ throughout an analysis workflow.
 
 ::::::::::::::::::::::::::::::::::::: callout
 
-## Images Are More Than Pictures
+## Images Are **NOT** Pictures - they are numerical datasets!
 
 A microscopy image contains two equally important components:
 

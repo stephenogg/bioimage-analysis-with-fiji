@@ -41,7 +41,8 @@ However, computers do not store images as colours in the way that we see them.
 
 Instead, microscopy images are usually stored as collections of numerical intensity values.
 
-In this episode, we will explore how image data are displayed in Fiji and learn the important distinction between **image data** and **image display**.
+In this episode, we will explore how image data are displayed in Fiji and 
+learn the important distinction between **image data** and **image display**.
 
 ## Grayscale Images
 
@@ -60,17 +61,27 @@ In a grayscale image, by convention:
 
 The image consists entirely of numerical values arranged into a matrix.
 
-For example:
+::::::::::::::::::::::::::::::::::::: challenge
 
 ```text
-0     = black
-32,768   = grey
-65,535  = white
+File → Save As ... → Text File...
 ```
+and save the file `m51.csv` somewhere you can find it.
 
-for this 16-bit image.
+Open the file in a text editor or spreadsheet program. What do you see?
+
+:::::::::::::::::::::::: solution
+
+You should see an array of numbers. This reinforces the notion that images are 
+numbers!
 
 The image itself contains only intensity values.
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -89,6 +100,154 @@ The darkest regions correspond to pixels with the lowest intensity values.
 Fiji displays these intensity values using shades of grey.
 
 :::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Image Histograms
+
+A useful way to visualise image intensity values is with a histogram.
+
+A histogram shows:
+
+- which intensity values are present in an image
+- how frequently those values occur
+- the overall distribution of pixel intensities
+
+Open the Cell Colony image and select:
+
+```text
+Analyze → Histogram
+```
+
+A new histogram window will appear.
+
+The horizontal axis represents pixel intensity values.
+
+The vertical axis represents the number of pixels with a particular intensity value.
+
+For an 8-bit image:
+
+```text
+0 -------------------- 255
+```
+
+corresponds to:
+
+```text
+Black ---------------- White
+```
+
+pixels.
+
+The histogram provides a summary of all pixel values within the image.
+
+## Understanding Histograms
+
+Suppose an image contains mostly dark pixels and only a few bright structures.
+
+Its histogram might look something like:
+
+```text
+Pixels
+  |
+  |████████████████████
+  |████████
+  |███
+  |
+  +------------------------
+     0              255
+```
+
+In this example:
+
+- most pixels have low intensity values
+- relatively few pixels have high intensity values
+
+A brighter image would typically have a histogram shifted towards higher intensity values.
+
+Histograms allow us to examine image data quantitatively rather than relying solely on visual appearance.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Open the histogram for the Cell Colony image.
+
+Where do most of the pixel intensities occur?
+
+Are the majority of pixels dark, bright, or somewhere in between?
+
+:::::::::::::::::::::::: solution
+
+Most microscopy images contain large areas of background.
+
+As a result, many pixels often have relatively low intensity values, producing a peak on the left-hand side of the histogram.
+
+The precise shape of the histogram depends on the image content.
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+## Histograms and Image Appearance
+
+Two images may appear very different while containing similar intensity distributions.
+
+Conversely, images that appear similar may have very different histograms.
+
+Histograms provide an objective description of image intensity values that is independent of our visual perception.
+
+For this reason, histograms are frequently used when evaluating image quality.
+
+## Histograms and Brightness & Contrast
+
+Open:
+
+```text
+Image → Adjust → Brightness/Contrast
+```
+
+Notice that the Brightness & Contrast window contains a histogram.
+
+This histogram displays the same intensity distribution seen in the Histogram window.
+
+Move the minimum and maximum sliders.
+
+Observe that:
+
+- the image appearance changes
+- the display range changes
+- the histogram itself remains unchanged
+
+This occurs because brightness and contrast adjustments affect image display rather than the underlying pixel values.
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+Adjust the brightness and contrast of the image.
+
+What happens to the appearance of the image?
+
+What happens to the histogram?
+
+:::::::::::::::::::::::: solution
+
+The image may appear brighter, darker, or more contrasty.
+
+However, the underlying pixel values remain unchanged.
+
+As a result, the histogram remains unchanged.
+
+:::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::: callout
+
+## Histograms Describe the Data
+
+A histogram is a summary of the pixel intensity values present in an image.
+
+Unlike image display settings, the histogram reflects the underlying image data.
+
+Histograms are useful for understanding image content, evaluating image quality, and comparing images objectively.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -111,7 +270,17 @@ E.g.
 
 This LUT linearly maps the range of values in an 8-bit image to the brightness 
 values on an 8-bit display. Fiji maps the 16-bit range (0 to 65535) to the same
-brightness values on the screen - the screen cannot cahnge to 16-bit.
+brightness values on the screen - the screen cannot change to 16-bit.
+
+
+| Image Pixel Value | Display Brightness |
+|:-----------:|:-----------|
+|0 -254|0|
+|255-511|1|
+|...|...|
+|65,024-65,279|254|
+|65,280-65,536|255|
+
 
 Open the menu:
 
@@ -240,7 +409,7 @@ This image contains multiple fluorescence channels.
 Each channel contains different information about the sample.
 
 The image is displayed as a composite image, 
-where several channels are shown simultaneously. But each channel is only made of 16-bit numerical data. 
+where several channels are shown simultaneously. But each channel is made of 16-bit numerical data. 
 There is no colour information as part of the image data.
 
 ## Exploring Channels
@@ -323,14 +492,15 @@ Open:
 ```text
 Image → Adjust → Brightness/Contrast
 ```
+![The Brightness & Contrast Window in Fiji](fig/04-image-display-channels/bandc.png){alt="brightness and contrast"}
 
-The Brightness & Contrast window allows the display range to be adjusted.
+The Brightness & Contrast window appears (floating) and allows the display range to be adjusted.
 
 Move the sliders and observe what happens.
 
 You should notice that the visibility of structures changes dramatically.
 
-However, the pixel values remain unchanged.
+However, the pixel values remain unchanged. Notice that the line in the graph moves.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
