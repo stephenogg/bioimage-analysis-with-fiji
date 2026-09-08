@@ -17,7 +17,7 @@ carpentry: 'dc'
 # carpentry_description: "Custom Carpentry"
 
 # Overall title for pages.
-title: 'Introduction to Image Processing with Fiji'
+title: 'BioImage Analysis with Fiji'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2026-06-26'
@@ -65,26 +65,26 @@ contact: 'stephen.ogg@kcl.ac.uk'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- motivation.Rmd
-- basics.Rmd
-- imageWindow.Rmd
-- image-basics.Rmd
-- basic-manipulation.Rmd
+episodes:
+- 01-introduction.md
+- 02-images-pixels-metadata.md
+- 03-fiji-basics.md
+- 04-image-display-channels.md
+- 05-measuring-biological-structures.md
+- 06-image-preprocessing.md
+- 07-segmentation.md
 
 # Information for Learners
-learners: 
+learners:
 
 # Information for Instructors
-instructors: 
+instructors:
 
 # Learner Profiles
-profiles: 
+profiles:
 
 # Customisation ---------------------------------------------
 #
 # This space below is where custom yaml items (e.g. pinning
 # sandpaper and varnish versions) should live
 
-header-includes: "<style>\n  .dark-mode img.no-invert, \n  .dark-mode .dark-filter.no-invert
-  {\n    filter: none !important;\n  }\n</style>\n"

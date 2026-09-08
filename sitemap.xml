@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/02-images-pixels-metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/03-fiji-basics.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/04-image-display-channels.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/05-measuring-biological-structures.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/06-image-preprocessing.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/07-segmentation.html</loc>
+  </url>
+  <url>
     <loc>https://stephenogg.github.io/image-processing-fiji/404.html</loc>
   </url>
   <url>
@@ -32,6 +53,27 @@
   </url>
   <url>
     <loc>https://stephenogg.github.io/image-processing-fiji/index.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/01-introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/02-images-pixels-metadata.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/03-fiji-basics.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/04-image-display-channels.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/05-measuring-biological-structures.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/06-image-preprocessing.html</loc>
+  </url>
+  <url>
+    <loc>https://stephenogg.github.io/image-processing-fiji/instructor/07-segmentation.html</loc>
   </url>
   <url>
     <loc>https://stephenogg.github.io/image-processing-fiji/instructor/404.html</loc>

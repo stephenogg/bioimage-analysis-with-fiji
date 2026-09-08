@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Introduction to Image Processing with Fiji: All Images</title>
+<title>BioImage Analysis with Fiji: All Images</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="assets/themetoggle.js"></script><link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><!-- NOTE: https://docs.mathjax.org/en/latest/output/mathml.html#mathml-support --><!-- Changes from V2 to V4: https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html
@@ -99,7 +99,7 @@
       <img class="small-logo" alt="Data Carpentry" src="assets/images/data-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Introduction to Image Processing with Fiji
+      BioImage Analysis with Fiji
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -110,7 +110,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Introduction to Image Processing with Fiji
+            BioImage Analysis with Fiji
           </span>
         </li>
         <li class="nav-item">
@@ -236,7 +236,7 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="motivation.html">1. Motivation</a>
+        <a href="01-introduction.html">1. Introduction to Bioimage Analysis and Fiji</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -248,7 +248,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="basics.html">2. ImageJ Basics</a>
+        <a href="02-images-pixels-metadata.html">2. Images, Pixels and Metadata</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -260,7 +260,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="imageWindow.html">3. Fiji's Image Window</a>
+        <a href="03-fiji-basics.html">3. Fiji Basics</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -272,7 +272,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="image-basics.html">4. Image Basics</a>
+        <a href="04-image-display-channels.html">4. Image Display, Channels and LUTs</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -284,7 +284,31 @@
 <div class="accordion accordion-flush" id="accordionFlush6">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading6">
-        <a href="basic-manipulation.html">5. Basic Manipulation</a>
+        <a href="05-measuring-biological-structures.html">5. Measuring Biological Structures</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-image-preprocessing.html">6. Preparing Images for Analysis</a>
+    </div>
+<!--/div.accordion-header-->
+
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-segmentation.html">7. Segmentation</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -347,177 +371,71 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>All Images</h1>
         
-<section id="motivation"><h2 class="section-heading"><a href="motivation.html">Motivation</a></h2>
+<section id="01-introduction"><h2 class="section-heading"><a href="01-introduction.html">Introduction to Bioimage Analysis and Fiji</a></h2>
 <hr class="half-width">
-<h3 id="motivation-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘a few bacterial colonies on a petri dish’</p>
-<figure><img src="fig/motivation/colonies-01.jpg" alt="a few bacterial colonies on a petri dish" class="figure mx-auto d-block"></figure><hr>
-<h3 id="motivation-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘bacterial colonies highlighted by segmentation and connected component analysis’</p>
-<figure><img src="fig/motivation/colony-mask.png" alt="bacterial colonies highlighted by segmentation and connected component analysis" class="figure mx-auto d-block"></figure><hr>
-<h3 id="motivation-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘several hundred bacterial colonies on a petri dish’</p>
-<figure><img src="fig/motivation/colonies-03.jpg" alt="several hundred bacterial colonies on a petri dish" class="figure mx-auto d-block"></figure><hr></section><section id="basics"><h2 class="section-heading"><a href="basics.html">ImageJ Basics</a></h2>
+<h3 id="01-introduction-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji's main interface window’</p>
+<figure><img src="fig/01-introduction/fiji-main-window.png" alt="Fiji's main interface window" class="figure mx-auto d-block"><div class="figcaption">Fiji Main Window</div>
+</figure><hr></section><section id="02-images-pixels-metadata"><h2 class="section-heading"><a href="02-images-pixels-metadata.html">Images, Pixels and Metadata</a></h2>
 <hr class="half-width">
-<h3 id="basics-figure-1">Figure 1</h3>
+<h3 id="02-images-pixels-metadata-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘three channel fluorescence micrograph of 4 HeLa Cells.’</p>
+<figure><img src="fig/02-images-pixels-metadata/hela-cells.png" alt="three channel fluorescence micrograph of 4 HeLa Cells." class="figure mx-auto d-block"><div class="figcaption">HeLa Cells</div>
+</figure><hr>
+<h3 id="02-images-pixels-metadata-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘magnified image showing individual pixels’</p>
+<figure><img src="fig/02images-pixels-metadata/pixels.png" alt="magnified image showing individual pixels" class="figure mx-auto d-block"><div class="figcaption">Visible Pixels</div>
+</figure><hr>
+<h3 id="02-images-pixels-metadata-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji's Image Info Window’</p>
+<figure><img src="fig/02-images-pixels-metadata/image-properties.png" alt="Fiji's Image Info Window" class="figure mx-auto d-block"><div class="figcaption">Image Info</div>
+</figure><hr>
+<h3 id="02-images-pixels-metadata-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji's Image Info Window’</p>
+<figure><img src="fig/02-images-pixels-metadata/image-info.png" alt="Fiji's Image Info Window" class="figure mx-auto d-block"><div class="figcaption">Image Info</div>
+</figure><hr></section><section id="03-fiji-basics"><h2 class="section-heading"><a href="03-fiji-basics.html">Fiji Basics</a></h2>
+<hr class="half-width">
+<h3 id="03-fiji-basics-figure-1">Figure 1</h3>
 <p aria-hidden="true">Image 1 of 1: ‘Fiji main window’</p>
-<p>After starting the program, you will see the main window: <img src="fig/basics/fiji-main-window.png" alt="Fiji main window" class="figure"> On
-macOS, the menu bar will appear on the top of the screen (as with all
-macOS applications).</p>
-<hr>
-<h3 id="basics-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘FIJI search results window’</p>
-<figure><img src="fig/basics/fiji-search-window.png" alt="FIJI search results window" class="figure mx-auto d-block"></figure><hr>
-<h3 id="basics-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘fiji main window with selection tools highlighted’</p>
-<figure><img src="fig/basics/fiji-toolbar.png" alt="fiji main window with selection tools highlighted" class="figure mx-auto d-block"></figure><hr>
-<h3 id="basics-figure-4">Figure 4</h3>
-<p aria-hidden="true">Image 1 of 1: ‘fiji main window with drag 'n drop highlighted’</p>
-<figure><img src="fig/basics/fiji-drag-drop.png" alt="fiji main window with drag 'n drop highlighted" class="figure mx-auto d-block"></figure><hr></section><section id="imageWindow"><h2 class="section-heading"><a href="imageWindow.html">Fiji's Image Window</a></h2>
+<figure><img src="fig/03-fiji-basics/fiji-main-window.png" alt="Fiji main window" class="figure mx-auto d-block"><div class="figcaption">Fiji Main Window</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-2">Figure 2</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji search Function’</p>
+<figure><img src="fig/03-fiji-basics/fiji-search-window.png" alt="Fiji search Function" class="figure mx-auto d-block"><div class="figcaption">Fiji Search Function</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-3">Figure 3</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Drag and Drop’</p>
+<figure><img src="fig/03-fiji-basics/fiji-drag-drop.png" alt="Drag and Drop" class="figure mx-auto d-block"><div class="figcaption">Use the Drag and Drop Method</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-4">Figure 4</h3>
+<p aria-hidden="true">Image 1 of 1: ‘blobs’</p>
+<figure><img src="fig/03-fiji-basics/blobs.png" alt="blobs" class="figure mx-auto d-block"><div class="figcaption">The Blobs Sample Image</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-5">Figure 5</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji image window showing image information’</p>
+<figure><img src="fig/03-fiji-basics/image-window-info.png" alt="Fiji image window showing image information" class="figure mx-auto d-block"><div class="figcaption">Image Details</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-6">Figure 6</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Screenshot showing multiple Fiji windows’</p>
+<figure><img src="fig/03-fiji-basics/fiji-windows.png" alt="Screenshot showing multiple Fiji windows" class="figure mx-auto d-block"><div class="figcaption">Multiple Fiji windows on a desktop</div>
+</figure><hr>
+<h3 id="03-fiji-basics-figure-7">Figure 7</h3>
+<p aria-hidden="true">Image 1 of 1: ‘Fiji's tools’</p>
+<figure><img src="fig/03-fiji-basics/fiji-toolbar.png" alt="Fiji's tools" class="figure mx-auto d-block"><div class="figcaption">Some of Fiji’s Tools</div>
+</figure><hr></section><section id="04-image-display-channels"><h2 class="section-heading"><a href="04-image-display-channels.html">Image Display, Channels and LUTs</a></h2>
 <hr class="half-width">
-<h3 id="imageWindow-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘The blobs sample image from Fiji’</p>
-<figure><img src="fig/imageWindow/blobs.png" style="width:50.0%" alt="The blobs sample image from Fiji" class="figure mx-auto d-block"><div class="figcaption"><em>File -&gt; Open Samples -&gt;
-Blobs</em></div>
-</figure><hr>
-<h3 id="imageWindow-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘screenshot of an image window with details enlarged’</p>
-<figure><img src="fig/imageWindow/image-window-info.png" alt="screenshot of an image window with details enlarged" class="figure mx-auto d-block"></figure><hr>
-<h3 id="imageWindow-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘screenshot of an image window with details’</p>
-<figure><img src="fig/imageWindow/fiji-windows.png" alt="screenshot of an image window with details" class="figure mx-auto d-block"></figure><hr></section><section id="image-basics"><h2 class="section-heading"><a href="image-basics.html">Image Basics</a></h2>
+<h3 id="04-image-display-channels-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘brightness and contrast’</p>
+<figure><img src="fig/04-image-display-channels/bandc.png" alt="brightness and contrast" class="figure mx-auto d-block"><div class="figcaption">The Brightness &amp; Contrast Window in
+Fiji</div>
+</figure><hr></section><section id="05-measuring-biological-structures"><h2 class="section-heading"><a href="05-measuring-biological-structures.html">Measuring Biological Structures</a></h2>
 <hr class="half-width">
-<h3 id="image-basics-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘A black &amp; white image of the KAUST beacon’</p>
-<figure><img src="fig/image-basics/beacon.jpg" style="width:33.0%" alt="A black &amp; white image of the KAUST beacon" class="figure mx-auto d-block"><div class="figcaption">The Beacon <span class="citation">@KAUST</span>
-</div>
-</figure><hr>
-<h3 id="image-basics-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Enlarged image’</p>
-<figure><img src="fig/image-basics/beacon-enlarged.jpg" alt="Enlarged image" class="figure mx-auto d-block"><div class="figcaption">Tiny Bit of the Beacon <span class="citation">@KAUST</span>
-</div>
-</figure><hr>
-<h3 id="image-basics-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image of 8’</p>
-<figure><img src="fig/image-basics/eight.jpg" alt="Image of 8" class="figure mx-auto d-block"><div class="figcaption">15-pixel image resembling an ‘8’ taking up 15
-pixels on the screen</div>
-</figure><hr>
-<h3 id="image-basics-figure-4">Figure 4</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Enlarged Image of 8’</p>
-<figure><img src="fig/image-basics/eight-enlarged.jpg" alt="Enlarged Image of 8" class="figure mx-auto d-block"><div class="figcaption">15-pixel image resembling an ‘8’ taking up many
-more pixels on the screen</div>
-</figure><hr>
-<h3 id="image-basics-figure-5">Figure 5</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image of 0’</p>
-<figure><img src="fig/image-basics/zero.jpg" alt="Image of 0" class="figure mx-auto d-block"></figure><hr>
-<h3 id="image-basics-figure-6">Figure 6</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Cartesian coordinate system’</p>
-<figure><img src="fig/image-basics/cartesian-coordinates.png" alt="Cartesian coordinate system" class="figure mx-auto d-block"><div class="figcaption">Cartesian Coordiate system</div>
-</figure><hr>
-<h3 id="image-basics-figure-7">Figure 7</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image coordinate system’</p>
-<figure><img src="fig/image-basics/image-coordinates.png" alt="Image coordinate system" class="figure mx-auto d-block"><div class="figcaption">Image Coordinate system containing only positive
-indices</div>
-</figure><hr>
-<h3 id="image-basics-figure-8">Figure 8</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Left-hand coordinate system’</p>
-<figure><img src="fig/image-basics/left-hand-coordinates.png" alt="Left-hand coordinate system" class="figure mx-auto d-block"><div class="figcaption">Left-Handed Coordinate system</div>
-</figure><hr>
-<h3 id="image-basics-figure-9">Figure 9</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image of 5’</p>
-<figure><img src="fig/image-basics/five.jpg" alt="Image of 5" class="figure mx-auto d-block"><div class="figcaption">15-pixel image resembling a 5</div>
-</figure><hr>
-<h3 id="image-basics-figure-10">Figure 10</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image of three colours’</p>
-<figure><img src="fig/image-basics/three_colours.png" alt="Image of three colours" class="figure mx-auto d-block"><div class="figcaption">More than just Black &amp; White</div>
-</figure><hr>
-<h3 id="image-basics-figure-11">Figure 11</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image using green LUT’</p>
-<figure><img src="fig/image-basics/three_colours_green.png" alt="Image using green LUT" class="figure mx-auto d-block"></figure><hr>
-<h3 id="image-basics-figure-12">Figure 12</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Image of a checkerboard’</p>
-<figure><img src="fig/image-basics/checkerboard.png" alt="Image of a checkerboard" class="figure mx-auto d-block"><div class="figcaption">4 X 4 Checkerboard</div>
-</figure><hr>
-<h3 id="image-basics-figure-13">Figure 13</h3>
-<p aria-hidden="true">Image 1 of 1: ‘screenshot of the blue pixel values’</p>
-<figure><img src="fig/image-basics/blue-pixel-values.png" alt="screenshot of the blue pixel values" class="figure mx-auto d-block"><div class="figcaption">Values of the blue pixel</div>
-</figure><hr>
-<h3 id="image-basics-figure-14">Figure 14</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image one’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/blue-split-gray.png" alt="Alt text for image one" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Blue Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-15">Figure 15</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image two’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/green-split-gray.png" alt="Alt text for image two" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Green Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-16">Figure 16</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image three’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/red-split-gray.png" alt="Alt text for image three" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Red Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-17">Figure 17</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image one’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/blue-split-blue.png" alt="Alt text for image one" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Blue Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-18">Figure 18</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image two’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/green-split-green.png" alt="Alt text for image two" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Green Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-19">Figure 19</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Alt text for image three’</p>
-<figure style="flex: 1; margin: 0; text-align: center;"><img src="fig/image-basics/red-split-red.png" alt="Alt text for image three" style="width: 100%; height: auto;" class="figure"><figcaption style="font-size: 0.9em; color: #555; margin-top: 5px;">
-Red Channel
-</figcaption></figure><hr>
-<h3 id="image-basics-figure-20">Figure 20</h3>
-<p aria-hidden="true">Image 1 of 1: ‘image of the way the primary colours combine’</p>
-<figure><img src="fig/image-basics/additive.png" alt="image of the way the primary colours combine" class="figure mx-auto d-block"><div class="figcaption">The Additive Colour Model</div>
-</figure><hr>
-<h3 id="image-basics-figure-21">Figure 21</h3>
-<p aria-hidden="true">Image 1 of 1: ‘RGB colour table’</p>
-<figure><img src="fig/image-basics/colour-table.png" alt="RGB colour table" class="figure mx-auto d-block"></figure><hr>
-<h3 id="image-basics-figure-22">Figure 22</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Fiji's image -&gt; type menu’</p>
-<figure><img src="fig/image-basics/image-types.png" alt="Fiji's image -&gt; type menu" class="figure mx-auto d-block"><div class="figcaption">Fiji’s <em>Image -&gt; Type</em> menu</div>
-</figure><hr>
-<h3 id="image-basics-figure-23">Figure 23</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Fiji's new image window’</p>
-<figure><img src="fig/image-basics/new-image.png" alt="Fiji's new image window" class="figure mx-auto d-block"><div class="figcaption">The New Image… Window</div>
-</figure><hr>
-<h3 id="image-basics-figure-24">Figure 24</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Original Maize Seedlings’</p>
-<figure><img src="fig/image-basics/quality-original.jpg" alt="Original Maize Seedlings" class="figure mx-auto d-block"><div class="figcaption">Image of Maize Seedlings</div>
-</figure><hr>
-<h3 id="image-basics-figure-25">Figure 25</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Enlarged, uncompressed’</p>
-<figure><img src="fig/image-basics/quality-tif.jpg" alt="Enlarged, uncompressed" class="figure mx-auto d-block"><div class="figcaption">Enlarged, uncompressed</div>
-</figure><hr>
-<h3 id="image-basics-figure-26">Figure 26</h3>
-<p aria-hidden="true">Image 1 of 1: ‘Enlarged, compressed’</p>
-<figure><img src="fig/image-basics/quality-jpg.jpg" alt="Enlarged, compressed" class="figure mx-auto d-block"><div class="figcaption">Enlarged, compressed</div>
-</figure><hr>
-<h3 id="image-basics-figure-27">Figure 27</h3>
-<p aria-hidden="true">Image 1 of 1: ‘histograms of the above images’</p>
-<figure><img src="fig/image-basics/quality-histogram.jpg" alt="histograms of the above images" class="figure mx-auto d-block"><div class="figcaption">Histograms of the two enalregd images</div>
-</figure><hr></section><section id="basic-manipulation"><h2 class="section-heading"><a href="basic-manipulation.html">Basic Manipulation</a></h2>
-<hr class="half-width">
-<h3 id="basic-manipulation-figure-1">Figure 1</h3>
-<p aria-hidden="true">Image 1 of 1: ‘an image depicting building an image histogram from a small subset of pixels in an image’</p>
-<figure><img src="fig/basic-manipulation/histo-explanation.png" alt="an image depicting building an image histogram from a small subset of pixels in an image" class="figure mx-auto d-block"><div class="figcaption">Creating an Image Histogram</div>
-</figure><hr>
-<h3 id="basic-manipulation-figure-2">Figure 2</h3>
-<p aria-hidden="true">Image 1 of 1: ‘an image of the KAUST Beacon alongside its image histogram’</p>
-<figure><img src="fig/basic-manipulation/imageHisto01.png" alt="an image of the KAUST Beacon alongside its image histogram" class="figure mx-auto d-block"><div class="figcaption">KAUST Beacon and Associated Image
-Histogram</div>
-</figure><hr>
-<h3 id="basic-manipulation-figure-3">Figure 3</h3>
-<p aria-hidden="true">Image 1 of 1: ‘a fluorescence microscope image of labelled actin cytoskeleton in cells and its associated histogram.’</p>
-<figure><img src="fig/basic-manipulation/imageHisto02.002.png" alt="a fluorescence microscope image of labelled actin cytoskeleton in cells and its associated histogram." class="figure mx-auto d-block"><div class="figcaption">Fluorescence micrograph and Associated Image
-Histogram</div>
-</figure><hr></section>
+<h3 id="05-measuring-biological-structures-figure-1">Figure 1</h3>
+<p aria-hidden="true">Image 1 of 1: ‘set measurements’</p>
+<figure><img src="fig/05-measuring-biological-structures/setMeasurements.png" alt="set measurements" class="figure mx-auto d-block"><div class="figcaption">Fiji’s Set Measurements Window</div>
+</figure><hr></section><section id="06-image-preprocessing"><h2 class="section-heading"><a href="06-image-preprocessing.html">Preparing Images for Analysis</a></h2>
+<hr class="half-width"></section><section id="07-segmentation"><h2 class="section-heading"><a href="07-segmentation.html">Segmentation</a></h2>
+<hr class="half-width"></section>
 </div>
     </main>
 </div>
@@ -544,7 +462,7 @@ Histogram</div>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.2)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.1)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.21.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.1.2)</a></p>
 		</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -567,8 +485,8 @@ Histogram</div>
   "url": "https://stephenogg.github.io/image-processing-fiji/images.html",
   "identifier": "https://stephenogg.github.io/image-processing-fiji/images.html",
   "dateCreated": "2026-06-26",
-  "dateModified": "2026-08-11",
-  "datePublished": "2026-08-11"
+  "dateModified": "2026-09-08",
+  "datePublished": "2026-09-08"
 }
 
   </script><script>
